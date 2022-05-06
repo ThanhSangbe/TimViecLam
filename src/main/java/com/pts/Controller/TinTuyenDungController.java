@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class TinTuyenDungController {
     @Autowired
     private TinTuyenDungService tinTuyenDungService;
+    //Them tin tuyen dung
     @GetMapping("/e/addTintuyendung")
     public String addTintuyendung(Model model) {
         Tintuyendung t = new Tintuyendung();
@@ -30,6 +31,7 @@ public class TinTuyenDungController {
         return "addTintuyendung";
     }
     @PostMapping("/e/addTintuyendung")
+    //them tin tuyen dung
     public String addTinTuyenDungPost(@ModelAttribute(value = "tinTuyenDung") @Valid Tintuyendung tintuyendung, BindingResult error, Model model)
     {
         if(!error.hasErrors())
